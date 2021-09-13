@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+    <title>Lean With Lilly</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light  mx-4">
+        <a class="navbar-brand logo" href="#"><img src="data:image/png;base64,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" alt="" width="105px" height="auto" ></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="#home">Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#shop">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#recipes">Recipes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">Support</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+            </li>
+            
+            
+          </ul>
+        </div>
+      </nav>
+
+      <!-- home -->
+      <section id="home">
+        <!-- <img class="home-img img-fluid" src="https://www.leanwithlilly.com/static/lillyguidedesktop-16aaba3487ce3e3bb227ad3db9701633.jpg" alt="" > -->
+        
+    </section>
+      
+      <!-- About -->
+      <section id="about" >
+          <div class="container ">
+        <div class="row ">
+            <div class="col-lg-6 col-md-6 my-5">
+                <img class="img-fluid rounded-circle " src="https://cdn.mos.cms.futurecdn.net/kBzgCqLBEd5DdAHBrA2AnT-768-80.png" alt="">
+            </div>
+            <div class="col-lg-6 col-md-6 about-para">
+                <p class="ml-5 w-75">I’m Lilly Sabri, and i've been a Chartered Physiotherapist since 2010, APPI Pilates instructor, Fitness, Heath and Lifestyle Influencer.
+                </p>
+                <p class="ml-5 w-75 " >As a physio I've worked with Chelsea Football Club, Watford Football Club, the England Women's Football Team and many more.</p>
+            </div>
+        </div>
+        </div>
+      </section>
+ 
+      <section id="cookbook">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-lg-6 col-md-6 ">
+                    <h3 class="text-center">The Anti-Inflammatory & Immunity Boosting Cookbook</h2>
+                        <p class="text-center">£9.99</p>
+                </div>
+                <div class="col-lg-6 col-md-6 my-3">
+                    <img class="img-fluid rounded-circle " src="https://www.leanwithlilly.com/static/cookbooks-dc9ff1f7a20188afb60b13b6266e69d3.jpeg" alt="">
+                </div>
+            </div>
+            </div>
+      </section>
+
+<!-- leanguide -->
+
+<section id="leanguide">
+<h2 class="text-center  guide">Lean <span>Guide</span> </h2>
+<div class="container">
+<div class="row my-5 pb-5">
+    <div class="col-lg-3 col-md-6 ">
+        <img class="img-fluid" src="https://www.leanwithlilly.com/static/LeanBeginnerGuide-bbfe7ecf53e75270aceed78e39750fc7.jpeg" alt="">
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+        <img class="img-fluid" src="https://www.leanwithlilly.com/static/leanVideo-aa7a4eca03fb9504e1f1060da732f88f.jpeg" alt="">
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+        <img class="img-fluid" src="https://www.leanwithlilly.com/static/personalGuide-77cdbfd19def0b6a16a8dd09632de8c9.jpeg" alt="">
+    </div>
+
+    <div class="col-lg-3 col-md-6">
+        <img class="img-fluid" src="https://cdn.shopify.com/s/files/1/0267/1381/7193/files/5_-_Square_-_Hourglass_Building_Guide_-_WEB_480x480.jpg" alt="">
+    </div>
+</div>
+</div>
+</section>
+
+<!-- shop -->
+<section id="shop">
+    <div class="container">
+        <h2 class="text-center mb-5 "> <span>Womens </span> Clothing</h2>
+    <div class="row">
+        <div class="col-lg-3 col-md-6 my-3">
+            <div class="card-deck">
+                <div class="card ">
+                  <img src="/lilli_pb/img.jpg"  class="card-img-top" alt="...">
+                  <div class="card-body cr-bd">
+                    <h5 class="card-title">Active Marled Capri Crop Top</h5>
+                    <p class="card-text"><small class="text-muted">Mineral | Light Brown</small></p>
+                    <p class="card-text">£35.00</p>
+                  </div>
+                </div>
+              </div>
+        </div>    
+        <div class="col-lg-3 col-md-6 my-3">
+            <div class="card-deck">
+                <div class="card">
+                  <img src="https://cdn.shopify.com/s/files/1/0098/8822/products/AdaptAnimal_Butterfly_ZipThroughTaupeGreyB1A1R59.A_GB_EDIT_ZH_281ed1f1-4fb3-40d5-8e67-e6d0ccfee2f6_600x.jpg?v=1629986298" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Adapt Animal Seamless Zip Up</h5>
+                    <p class="card-text"><small class="text-muted">Butterfly | Grey</small></p>
+                    <p class="card-text">£50.00</p>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-3 col-md-6 my-3">
+            <div class="card-deck">
+                <div class="card">
+                  <img src="https://cdn.shopify.com/s/files/1/0098/8822/products/EnergySeamlessCropTopMosaicBlueGLCT532540.A-Edit_Edit_HK_ZH_600x.jpg?v=1628755074" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Energy Seamless Crop Top</h5>
+                    <p class="card-text"><small class="text-muted">Blue</small></p>
+                    <p class="card-text">£30.00</p>
+                  </div>
+                </div>
+              </div>
+        </div>    
+        <div class="col-lg-3 col-md-6 my-3">
+            <div class="card-deck">
+                <div class="card">
+                  <img src="https://cdn.shopify.com/s/files/1/0098/8822/products/AdaptFleckSeamlessLsCropTopBurgundyRedB2A1C12.A_GB_EDIT_GB_BK_18ecb77f-89a2-4f5b-a4e9-7e6d53ca785a_600x.jpg?v=1629986320" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Fleck Seamless Long Sleeve </h5>
+                    <p class="card-text"><small class="text-muted">Mineral | Burgundy</small></p>
+                    <p class="card-text">£35.00</p>
+                  </div>
+                </div>
+              </div>
+        </div>  
+        <div class="col-lg-3 col-md-6 my-3">
+            <div class="card-deck">
+                <div class="card">
+                  <img src="https://cdn.shopify.com/s/files/1/0098/8822/products/VITALSEAMLESSSPORTSBRAB1A6T-EBCK-XS-AI1OBSIDIANGREENMARL24.A_GB_EDIT_ZH_d2335adb-c11e-4b5b-84e2-9b1dbb2d39ba_600x.jpg?v=1628755034" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Vital Seamless 2.0 Sports Bra</h5>
+                    <p class="card-text"><small class="text-muted">Dark Green Marl</small></p>
+                    <p class="card-text">£30.00</p>
+                  </div>
+                </div>
+              </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 my-3">
+            <div class="card-deck">
+                <div class="card">
+                  <img src="https://cdn.shopify.com/s/files/1/0098/8822/products/AnimalGraphicInfillCropTeeBlack2GLST571513.AnimalGraphicInfillCropTeeBlack2GLST5715_ZH_ZH_600x.jpg?v=1631108839" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Animal Graphic Infill Crop Tee</h5>
+                    <p class="card-text"><small class="text-muted">Black</small></p>
+                    <p class="card-text">£20.00</p>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-3 col-md-6 my-3">
+            <div class="card-deck">
+                <div class="card">
+                  <img src="https://cdn.shopify.com/s/files/1/0098/8822/products/EnergySeamlessCropTopBlack2GLCT532542.A-Edit_Edit_HK_ZH_600x.jpg?v=1628755074" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Energy Seamless Crop Top</h5>
+                    <p class="card-text"><small class="text-muted">Black</small></p>
+                    <p class="card-text">£30.00</p>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-3 col-md-6 my-3">
+            <div class="card-deck">
+                <div class="card">
+                  <img src="https://cdn.shopify.com/s/files/1/0098/8822/products/EnergySeamlessT-ShirtScandiPinkGLST532833.A-Edit_Edit_HK_ZH_600x.jpg?v=1628755024" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Energy Seamless T-Shirt</h5>
+                    <p class="card-text"><small class="text-muted">Light Pink</small></p>
+                    <p class="card-text">£30.00</p>
+                  </div>
+                </div>
+              </div>
+        </div>    
+    </div>
+    <hr class="mx-auto mt-5">
+
+    <!-- Mens -->
+
+    <h2 class="text-center mb-5 ">Mens <span>Clothing</span> </h2>
+    <div class="row">
+        <div class="col-lg-3 col-md-6 my-3">
+            <div class="card-deck">
+                <div class="card ">
+                  <img src="https://cdn.shopify.com/s/files/1/0098/8822/products/315SST-SHIRTA1A4X-BBBB-M-AF1BLACK49.A_GB_EDIT_GB_BK_d4fd4134-6b94-4922-ab27-6dbca6e189e4_600x.jpg?v=1629986182"  class="card-img-top" alt="...">
+                  <div class="card-body cr-bd">
+                    <h5 class="card-title">315 T-Shirt</h5>
+                    <p class="card-text"><small class="text-muted"> Black</small></p>
+                    <p class="card-text">£35.00</p>
+                  </div>
+                </div>
+              </div>
+        </div>    
+        <div class="col-lg-3 col-md-6 my-3">
+            <div class="card-deck">
+                <div class="card">
+                  <img src="https://cdn.shopify.com/s/files/1/0098/8822/products/RecessLightweightJacketWildcard-StudioGreen25.A_EDIT_GBOX_ZH_600x.jpg?v=1630573013" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Lightweight Jacket</h5>
+                    <p class="card-text"><small class="text-muted"> Green</small></p>
+                    <p class="card-text">£60.00</p>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-3 col-md-6 my-3">
+            <div class="card-deck">
+                <div class="card">
+                  <img src="https://cdn.shopify.com/s/files/1/0098/8822/products/VITAL14ZIPA1A4E-EBCK-M-AI1OBSIDIANGREENMARL14.A-Edit_GB_BK_9138b42e-af6b-4b48-97c7-099cfc0c8c61_600x.jpg?v=1629986658" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Vital 1/4 Zip</h5>
+                    <p class="card-text"><small class="text-muted">Dark Green Marl</small></p>
+                    <p class="card-text">£40.00</p>
+                  </div>
+                </div>
+              </div>
+        </div>    
+        <div class="col-lg-3 col-md-6 my-3">
+            <div class="card-deck">
+                <div class="card">
+                  <img src="https://cdn.shopify.com/s/files/1/0098/8822/products/RECESSDROPARMTANK-BLACK38.B_ZH_600x.jpg?v=1630573024" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Recess Tank </h5>
+                    <p class="card-text"><small class="text-muted">Black</small></p>
+                    <p class="card-text">£25.00</p>
+                  </div>
+                </div>
+              </div>
+        </div>  
+        <div class="col-lg-3 col-md-6 my-3">
+            <div class="card-deck">
+                <div class="card">
+                  <img src="https://cdn.shopify.com/s/files/1/0098/8822/products/ARRIVALREGULARSST-SHIRT-CAMOGREEN.A_ZH_ZH_600x.jpg?v=1628755052" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Regular Fit T-Shirt</h5>
+                    <p class="card-text"><small class="text-muted">Dark Green Marl</small></p>
+                    <p class="card-text">£20.00</p>
+                  </div>
+                </div>
+              </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 my-3">
+            <div class="card-deck">
+                <div class="card">
+                  <img src="https://cdn.shopify.com/s/files/1/0098/8822/products/315SEAMLESSTANKA1A4O-GBC6-M-AF1SMOKEYGREY14.A_GB_EDIT_GB_BK_6ca9ec07-4481-49bd-895d-3b655e687297_600x.jpg?v=1629986201" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">315 Tank</h5>
+                    <p class="card-text"><small class="text-muted">Smokey Grey</small></p>
+                    <p class="card-text">£35.00</p>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-3 col-md-6 my-3">
+            <div class="card-deck">
+                <div class="card">
+                  <img src="https://cdn.shopify.com/s/files/1/0098/8822/products/RecessCrewBlackA1A5G42.RecessCrewBlackA1A5G-Edit_Edit_HKTIFF_IS_600x.jpg?v=1630572893" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Crew Sweatshirt</h5>
+                    <p class="card-text"><small class="text-muted">Black</small></p>
+                    <p class="card-text">£30.00</p>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-3 col-md-6 my-3">
+            <div class="card-deck">
+                <div class="card">
+                  <img src="https://cdn.shopify.com/s/files/1/0098/8822/products/A1A2C-UBCYCrestCrewNavyELLIS31.A_GB_EDIT_GB_BK_600x.jpg?v=1628755056" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Crest Sweatshirt</h5>
+                    <p class="card-text"><small class="text-muted">Navy</small></p>
+                    <p class="card-text">£30.00</p>
+                  </div>
+                </div>
+              </div>
+        </div>    
+    </div>
+
+    <hr class="mx-auto mt-5">
+
+    <!-- Resistance Band -->
+
+    <h2 class="text-center mb-5 "><span>Resistance </span>Bands </h2>
+    <div class="row">
+        <div class="col-lg-4 col-md-6 my-3">
+            <div class="card-deck">
+                <div class="card ">
+                  <img src="https://assets.aflete.com/products/images/d9KFRBpdIBFTa1zQwp8nLk4D2HHkrfEgg5s04DcnvCjjWmMNCPbyU7uLdvleYFjyv9GBGjkwVhzBpG1u2I1rcQeGqOMfOfl1f1nE.jpg"  class="card-img-top" alt="...">
+                  <div class="card-body cr-bd">
+                    <h5 class="card-title">Lean Skipping Rope</h5>
+                    
+                    <p class="card-text">£18.00</p>
+                  </div>
+                </div>
+              </div>
+        </div>    
+        <div class="col-lg-4 col-md-6 my-3">
+            <div class="card-deck">
+                <div class="card">
+                  <img src="https://assets.aflete.com/products/images/Gh3VVhwMVpzXt2Htf6MysZ0whhqiaHtQxCISxtHUdgn79KtbUvER0EHsqGjTuR1cojrzYRwzgnKSHbwrIdcKDpXB4QlThb3t2cTk.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Aqua Adjustable Band</h5>
+                    
+                    <p class="card-text">£19.00</p>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-4 col-md-6 my-3">
+            <div class="card-deck">
+                <div class="card">
+                  <img src="https://assets.aflete.com/products/images/rDa63ayaCKXLVtBLKWbk3WlmenMmtTe9hXSwTwX9RRbefZce5SoLFtYU85nRVSpdNzXht9AIgECqJESha7lAwtAIPQYmhryNwO4t.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Black Adjustable Band</h5>
+                    
+                    <p class="card-text">£19.00</p>
+                  </div>
+                </div>
+              </div>
+        </div>    
+        <div class="col-lg-4 col-md-6 my-3">
+            <div class="card-deck">
+                <div class="card">
+                  <img src="https://assets.aflete.com/products/images/32srWmpzWhLMGdZXXd6knUOcm11QrhlRC5wByA7FDPPwmzB1mg7ExucnCJuM6ic9PVIVcrV5LO4mmEIUIBvak4XRg2lstdJzB7kS.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Black HIIT Band</h5>
+                    
+                    <p class="card-text">£25.00</p>
+                  </div>
+                </div>
+              </div>
+        </div>  
+        <div class="col-lg-4 col-md-6 my-3">
+            <div class="card-deck">
+                <div class="card">
+                  <img src="https://assets.aflete.com/products/images/GIu2opQGBRwgBMU8sI1gnYfJ1HngouL4yva6CwxfpT0M70tHHfrsJcfhykhsWeZ4dmI3C7Srtahlcn8dmqMLFSCJANmOvgwBDUGF.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Purple rose HIIT Band</h5>
+                    
+                    <p class="card-text">£20.00</p>
+                  </div>
+                </div>
+              </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 my-3">
+            <div class="card-deck">
+                <div class="card">
+                  <img src="https://assets.aflete.com/products/images/TOFGr79qcSvaj2XI6US8wrmkCCjHKn0q5OEV4SNUVLyxXOyItA50YgzoXTjqvcXgLNIAV316tijR7TDPtD169u3NmhyrqeHjVaNS.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title">Long Band Set</h5>
+                    
+                    <p class="card-text">£35.00</p>
+                  </div>
+                </div>
+              </div>
+        </div>
+            
+    </div>
+
+
+
+</div>
+</section>
+
+<!-- Nourish and glow -->
+
+<section id="nourish">
+    <div class="img">        
+    <img class="nourish-img img-fluid " src="https://www.leanwithlilly.com/static/SupplementBannerDesktop-243820f32c82e1b321621d618f55e57e.jpg"  alt="">
+    <div class="heading">
+        <p class="text-center nourish-logo">Nourish & Glow</p>
+        <button type="button" class="btn btn-primary btn-lg nourish-btn">Shop Now</button>
+    </div>
+    </div>
+</section>
+
+<!-- Nourish-guide -->
+
+<section id="testimonials">
+    <h2 class="pt-5">LEAN SUPPLEMENTS AVAILABLE NOW</h2>
+    <p>START YOUR JOURNEY WITH THE NOURISH & GLOW RANGE NOW!</p>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="testimonial-image" src="https://assets.aflete.com/products/images/cweDBmhl9eHRHsgewIynZO4TKCuAHY8TjzHejxR6drmroSefbzvWhlpNMlOIVVcyTpLHI5sKAVDmRGYiAlNoFdNkT29rA6zqU8o3.jpg" alt="dog-profile">
+            <p>Vanilla Protein<br>£22.00</p>
+        </div>
+        <div class="carousel-item">
+          <img class="testimonial-image" src="https://assets.aflete.com/bundles/cNEO41fLLH3l1R45gPHoWDA7AKSjzi0WWLDtG49UR9Nt2GWnwIxb8y3ChZfOmCYHumORlFz0lPUyzeyzJgPVSgXEpDOKPNtNUvvU.jpg" alt="lady-profile">
+          <p>Lean Essentials Bundle<br>£65.00</p>
+        </div>
+        <div class="carousel-item">
+          <img class="testimonial-image" src="https://assets.aflete.com/bundles/hYIt1PlcBPqZoxLqS7MRy8XQl5sN01tZ1y9QYl95E5x0qtbxkZgzCA5DHgaHiWuebO5sPpl169EuXOuquNP1iVAvPnmzgf6KF9Ft.jpg" alt="lady-profile">
+          <p>All In One Bundle<br>£56.00</p>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+  </section>
+
+  <!-- Healthy Recipes -->
+<section id="recipes">
+    <h2 class="text-center my-4 py-5">Healthy Recipes</h2>
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-md-6">
+            <div class="card ">
+                <img src="https://lean.ghost.io/content/images/2021/06/image-asset--7-.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Overnight Raspberry & Vanilla Protein Oats</h5>
+                  <p class="card-text">Such a simple, delicious recipe which takes literally 2 minutes to prep, ready for your breakfast in the morning. Prep Time: 2 minutes, and</p>
+                  <a href="#" class="btn btn-primary ">Read More</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-4 col-md-6 ">
+            <div class="card ">
+                <img src="https://lean.ghost.io/content/images/2021/06/image-asset--14-.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Post Workout Pick Me Up Salad</h5>
+                  <p class="card-text">Prep time: 8 mins serves 1 The perfect post-workout meal packed with protein, nutrients, fibre and a small amount of carbs ingredients 1 avocado 1 handful cherry tomatoes 2</p>
+                  <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-4 mb-5">
+            <div class="card ">
+                <img src="https://lean.ghost.io/content/images/2021/06/Protein-pack-acai-bowl.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Protein Packed Acai Bowl</h5>
+                  <p class="card-text">One of many delicious acai smoothie bowls on my recipe page, this one has the added benefits of containing flaxseed and blueberries In one of my earlier recipes I have</p>
+                  <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- youtube -->
+<section id="youtube">
+    <h2 class="text-center my-3">Workout With Lilly</h2>
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-md-6 my-2" >
+        <div class="embed-responsive embed-responsive-21by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/BCc5wh_A-VU"></iframe>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6  my-2" >
+        <div class="embed-responsive embed-responsive-21by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3Lfe9SXwI_8"></iframe>
+        </div>
+    </div>
+    <div class="col-lg-4 my-2" >
+        <div class="embed-responsive embed-responsive-21by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Shk3pyzHR9M"></iframe>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+
+
+<!-- footer -->
+<section id="footer">
+
+<footer class="page-footer font-small indigo">
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
+  
+      <!-- Grid row -->
+      <div class="row">
+        <hr class="clearfix w-100 d-md-none">  
+        <hr class="clearfix w-100 d-md-none">
+  
+        <!-- Grid column -->
+        <div class="col-lg-3 col-md-3 mx-auto ">
+  
+          <!-- Links -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Information</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Shipping Information</a>
+            </li>
+            <li>
+              <a href="#!">FAQ & Support</a>
+            </li>
+            <li>
+              <a href="#!">Refund Policy</a>
+            </li>
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <hr class="clearfix w-100 d-md-none">
+  
+        <!-- Grid column -->
+        <div class="col-lg-3 col-md-3 mx-auto ">
+  
+          <!-- Links -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Legal</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!">Consumer Goods T&Cs</a>
+            </li>
+            <li>
+              <a href="#!">Acceptable Use Policy </a>
+            </li>
+            <li>
+              <a href="#!">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="#!">Website T&Cs</a>
+            </li>
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+        <div class="col-lg-6 mx-auto my-5">
+
+    <!-- Footer Elements -->
+    <div class="container">
+  
+      <!-- Social buttons -->
+      <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item">
+          <a class="btn-floating btn-fb mx-1">
+            <i class="fab fa-facebook"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-tw mx-1">
+            <i class="fab fa-twitter"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-gplus mx-1">
+            <i class="fab fa-google-plus-g"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-li mx-1">
+            <i class="fab fa-linkedin-in"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-dribbble mx-1">
+            <i class="fab fa-youtube"> </i>
+          </a>
+        </li>
+      </ul>
+    </div>
+        </div>
+      </div>
+    </div>  
+    <div class="footer-copyright text-center py-3">© 2021 Copyright:</div>
+  </footer>
+</section>
+
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+</html>
